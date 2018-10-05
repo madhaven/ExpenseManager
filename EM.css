@@ -1,0 +1,318 @@
+body, html{
+    left:0;
+    top:0;
+    margin:0;
+    padding:0;
+    background-color:rgba(0,0,0,0);
+}
+a{
+    color:inherit;
+    text-decoration:none;
+}
+.trans2inout, .trans2inout *{
+    transition:all 0.2s ease-in-out;
+}
+.trans3inout, .trans3inout *{
+    transition: all 0.3s ease-in-out;
+}
+.trans5inout, .trans5inout *{
+    transition: all 0.5s ease-in-out;
+}
+.fronttitle{
+    position:fixed;
+    top:0;
+    width:100vw;
+    height:70px;
+    background-color:white;
+    text-align: center;
+    border-bottom:1px solid #eee;
+    box-shadow: 0 0 10px 0px rgba(0,0,0,0.5);
+    z-index: 3;
+    overflow:hidden;
+
+}
+.frontsplit{
+    padding:0;
+    margin:0;
+    top:0;
+}
+.frontsplit span, .frontsplit span:enabled{
+    width:50%;
+    height:100vh;
+    float:left;
+    text-align:center;
+    background-color:#eee;
+}
+.frontsplit span:hover, .frontsplit span:focus{
+    background-color:white;
+}
+.vmid{
+    position:absolute;
+    top:50%;
+    transform:translate(-50%, -50%);
+    padding-top:70px;
+}
+.vmidb{
+    left:25%;
+}
+.vmida{
+    left:75%;
+}
+.homenavbar{
+    background-color:#eee;
+    min-height:100vh;
+    padding:80px 0px 0px;
+    border:none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transform:translateX(-97%); /*disable for testing*/
+    transition: transform 0.3s ease-in-out 1s;
+    z-index: 2;
+}
+.homenavbar:hover, homenavbar:focus{
+    transform:translateX(0%);
+    transition: transform 0.3s ease-in-out 0s;
+}
+.homenavbar ul{
+    text-align:left;
+    list-style-type:none;
+    margin-top:10px;
+    padding-left:0;
+}
+.homenavbar ul li{
+    overflow:hidden;
+    padding:5px 10px;
+}
+.homenavbar>ul>li:hover, .homenavbar>ul>li:focus{
+    background-color:rgba(0, 0, 0, 0.1);
+    border-left:4px solid rgba(0,0,0,0.7);
+}
+.logsli:hover, logsli:focus{
+    padding:5px 0px 0px 10px;
+    margin-bottom:5px;
+}
+.homenavbar ul li a{
+    display:block;
+    text-decoration:none;
+}
+.homenavbar ul li:hover>a, .homenavbar ul li:focus>a{    
+    color:black;
+}
+.logsli > ul{
+    display:none;/*disable for testing*/
+    text-align:left;
+    margin-bottom:0;
+    padding-bottom:0;
+}
+.logsli:hover ul{
+    display:flow-root;
+    transition-delay: 1s;
+}
+.submenuactive{
+    display:flow-root;
+}
+.homenavbar>ul ul li:hover, .homenavbar>ul ul li:focus{
+    padding-left:10px;
+    background-color:rgba(0, 0, 0, 0.1);
+    border-right:4px solid rgba(0,0,0,0.7);
+}
+.seebeneathheader{
+    padding-top:+70px;
+    margin-top:0;
+}
+.mainframe{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    width:100%;
+    height:100%;
+    min-height:100vh;
+    border:none;
+    background-color:transparent;
+}
+.accbody, .logbody{
+    background-color:rgba(0,0,0,0);
+    padding-top:30px;
+}
+.acctabpad{
+    padding-top:20px;
+}
+.acctabpad .table td, .acctabpad .table tr{
+    vertical-align:middle;
+}
+tr>td{
+    max-width:200px;
+}
+tr>:nth-child(1){
+    width:100%;
+}
+tr>td.tdedit *, tr>td.tddelete *{
+    visibility:hidden;
+}
+tr:hover>td.tdedit *, tr:focus-within>td.tdedit *, tr:hover>td.tddelete *, tr:focus-within>td.tddelete *{
+    visibility:visible;
+}
+.accbody input{
+    border:none;
+    padding:3px 10px;
+    border-radius:0px;
+    border-bottom:2px solid rgba(0,0,0,0);
+}
+.accbody td.tdedit input{
+    background-color:rgba(0,0,0,0.1);
+}
+.accbody a:hover, .accbody a:focus{
+    text-decoration:none;
+    font-weight: bold;
+    color:black;
+}
+input:hover,input:focus{
+    border-bottom:2px solid rgba(0,0,0,0.7);
+}
+.accbody .newaccountrow form{
+    visibility:hidden;
+    display:inline-block;
+}
+.passwordmain{
+    margin-top:30vh;
+}
+.passwordmain input{
+    width:60%;
+    border:none;
+    border-radius:5px;
+    padding:5px 10px 5px;f
+    background-color:rgba(255,255,255,0.6);
+}
+.logbody select, .logbody .table th{
+    box-shadow: none;
+    border-radius:0px;
+    background-color:rgba(255,255,255,0.4);
+    border:none;
+    color:rgba(0,0,0,0.7);
+}
+.logbody select{
+    border-bottom: 2px solid rgba(0,0,0,0.7);
+    background-color:rgba(255, 255, 255, 0.2);
+}
+.logbody select:hover, .logbody select:focus{
+    background-color:rgba(255, 255, 255, 0.4);
+    border-bottom-width:3px;
+    cursor:pointer;
+}
+.logbody .table, .logbody .table th{
+    border-top:none;
+}
+.logbody .table td{
+    vertical-align:middle;
+    border-top:none;
+    background-color:rgba(255, 255, 255, 0.2);
+}
+.logbody .table tbody tr:hover td, .logbody .table tbody tr:focus td{
+    background-color:rgba(255, 255, 255, 0.4);
+}
+.logbody .table td input, .logbody .table td input:active{
+    box-shadow:none;
+    padding: 0px 5px 0px;
+    height:25px;
+    min-width:50px;
+    border: none;/*1px solid rgba(0,0,0,0.7);*/
+    border-bottom:1px solid rgba(0,0,0,0);
+    background-color:rgba(255, 255, 255,0.2);
+    border-radius:5px;
+}
+.logbody .table td input:hover, .logbody .table td input:focus{
+    border-bottom:1px solid rgba(0,0,0,0.7);
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:0px;
+}
+.logbody thead{
+    position:sticky;
+    top:500px;
+    height:7%;
+    overflow-y:auto;
+    width:auto;
+}
+.tdaily td, th{
+    min-width:12vw;
+}
+.tdaily td>a{
+    display:block;
+    text-decoration:none;
+}
+.tdaily td>a:hover, .tdaily td>a:focus{
+    color:inherit;
+}
+/*form[name='accountselect'] input[type='submit']{
+    display:none;
+}*/
+.homepanels .panel{
+    text-align: center;
+    box-shadow: 0 5px 10px 0px rgba(0,0,0,0.5);
+}
+.homepanels .panel a:hover, .homepanels .panel a:focus{
+    color:black;
+    text-decoration:none;
+}
+.homepanels .panel:hover, .homepanels .panel:focus{
+    transform: scale(1.02, 1.02);
+    box-shadow: 0 5px 13px 1px rgba(0,0,0,0.5);
+}
+.homepanels .panel-heading{
+    color:rgba(10,10,10,0.7);
+    font-weight:bold;
+    position:relative;
+}
+.panel-body{
+    color:rgba(20, 20, 20, 0.7);
+}
+.homepanels .editwrench{
+    position:absolute;
+    right:5px;
+    top:8px;
+    display:block;
+    visibility:hidden;
+}
+.homepanels .trashcan{
+    position:absolute;
+    left:5px;
+    top:8px;
+    display:block;
+    visibility:hidden;
+}
+.homepanels .theinput{
+    border:none;
+    box-shadow: none;
+    text-align:Center;
+    padding:none;
+    margin:none;
+}
+.homepanels:hover #unique{
+    border-bottom:2px solid black;
+}
+.homepanels:hover .trashcan, .homepanels:hover .editwrench{
+    visibility:visible;
+}
+.see{
+    display:block;
+}
+.nosee{
+    display:none;
+}
+.glyphicon-arrow-up{
+    color:darkred;
+}
+.glyphicon-arrow-down{
+    color:darkgreen;
+}
+.panel-body .netvalue{
+    color:black;
+}
+.panel-body .value{
+    font-weight:bold;
+}
+.newccount{
+    filter:opacity(0.5);
+}
+.newccount:hover, .newccount:focus-within, .newccount:focus{
+    filter:opacity(1);
+}
