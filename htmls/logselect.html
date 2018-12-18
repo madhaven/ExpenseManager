@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Select Logs</title>
+        <link type='text/css' rel='stylesheet' href='bootstrap.css'>
+        <meta name='author' content='Jitin J Gigi'>
+        <link rel='stylesheet' type='text/css' href='EM.css'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <script>
+            var selected;
+            function selectme(a)
+            {
+                for (var x=0; x<4; x++)
+                {
+                    document.getElementsByClassName('select')[x].style.borderBottom='2px solid white';
+                    document.getElementsByClassName('select')[x].style.color='darkgray';
+                    document.getElementsByClassName('select')[x].style.fontWeight='100';
+                }
+                document.getElementById(a).style.borderBottom='2px solid rgb(0,0,0)';
+                document.getElementById(a).style.color='rgb(0,0,0)';
+                document.getElementById(a).style.fontWeight='bolder';
+                selected=a;
+            }
+            function hoverme(a)
+            {
+                if (a!=selected)
+                {
+                    document.getElementById(a).style.borderBottom='2px solid rgb(200,200,200)';
+                    document.getElementById(a).style.color='black';
+                }
+            }
+            function unhoverme(a)
+            {
+                if (a!=selected)
+                {
+                    document.getElementById(a).style.borderBottom='2px solid white';
+                    document.getElementById(a).style.color='darkgray';
+                }
+            }
+            function initialset()
+            {
+                document.getElementById('1').click();
+            }
+        </script>
+        <style type='text/css'>
+            ::-webkit-scrollbar{
+                width:0px;
+            }
+        </style>
+    </head>
+    <body class='logselect_body' onload='initialset()'>
+        <nav class='container-fluid logselect_tabs trans2inout'>
+            <a onclick='selectme(1)' onmouseover='hoverme(1)' onmouseout='unhoverme(1)' class='select' id='1' target='themainframe' href='logall.php'>All Logs</a>
+            <a onclick='selectme(2)' onmouseover='hoverme(2)' onmouseout='unhoverme(2)' class='select' id='2' target='themainframe' href='logdaily.php'>Daily Logs</a>
+            <a onclick='selectme(3)' onmouseover='hoverme(3)' onmouseout='unhoverme(3)' class='select' id='3' target='themainframe' href='logmonthly.php'>Monthly Logs</a>
+            <a onclick='selectme(4)' onmouseover='hoverme(4)' onmouseout='unhoverme(4)' class='select' id='4' target='themainframe' href='logyearly.php'>Yearly Logs</a>
+        </nav>
+        <iframe class='logselect_iframe' name='themainframe'></iframe>
+    </body>
+</html>

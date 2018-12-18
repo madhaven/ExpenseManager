@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Expense Manager - Daily Logs | Jay Creations</title>
+        <link type='text/css' rel='stylesheet' href='../bootstrap.css'>
+        <link type='text/css' rel='stylesheet' href='../EM.css'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    </head>
+    <body class='logbody'>
+        <div class='container'>
+            <center><h3>Daily Logs</h3></center>
+            <div>
+                <center>
+                    <form  name='accountselect' action='bleh.html' method='post'>
+                        <select class='form-control trans3inout' name='account' onchange="this.form.submit()">
+<!--?php
+                            foreach ($accountsselect as $x)
+                                if ($x==$_SESSION['accname'])
+                                    echo "<option value='$x' selected>$x</option>";
+                                else 
+                                    echo "<option value='$x'>$x</option>";?-->
+                        </select>
+                    </form>
+                    <table class='table table-hover'>
+                        <thead style='display:table-header-group'>
+                            <tr>
+                                <th class='container'>Date</th>
+                                <th>Net</th>
+                                <th>Income</th>
+                                <th>Outgo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class='trans3inout'>
+                                <td>someday</td>
+                                <td>bleh</td>
+                                <td>bleh</td>
+                                <td>bleh</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </center>
+            </div>
+        </div>
+    </body>
+</html>

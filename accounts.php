@@ -10,6 +10,7 @@ $username=session_check("Location: index.php/?page=accounts");
         <meta name='author' content='Jitin J Gigi'>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <link rel='shortcut icon' type='image/png' href='logo.ico'>
     </head>
     <body class='accbody'>
         <div class='container'>

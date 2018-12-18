@@ -11,8 +11,8 @@ function session_check($np="index.php")
     else
     {
         $query="select `username` from `users` where `username`='{$_SESSION['username']}'";
-        //if (!@$con=mysqli_connect("localhost", "root", "", "em"))
-        if (!@$con=mysqli_connect("fdb21.awardspace.net", "2759046_em", "Jitin@8943432729", "2759046_em"))
+        if (!@$con=mysqli_connect("localhost", "root", "", "em"))
+        //if (!@$con=mysqli_connect("fdb21.awardspace.net", "2759046_em", "Jitin@8943432729", "2759046_em"))
             die("Cannot connect to session servers");
         if (!$qres=mysqli_query($con, $query))
         {
@@ -30,8 +30,8 @@ function session_check($np="index.php")
 }
 function exists($query)
 {
-    //if (!$con = mysqli_connect("localhost", "root", "", "em"))
-    if (!@$con = mysqli_connect("fdb21.awardspace.net", "2759046_em", "Jitin@8943432729", "2759046_em"))
+    if (!$con = mysqli_connect("localhost", "root", "", "em"))
+//    if (!@$con = mysqli_connect("fdb21.awardspace.net", "2759046_em", "Jitin@8943432729", "2759046_em"))
         die ("Connection to existense server failed");
     if (!$qres = mysqli_query($con, $query))
         die("Communication to existance interrupted: ");//.mysqli_error($con)."<br>".$query);

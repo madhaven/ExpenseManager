@@ -5,9 +5,18 @@ body, html{
     padding:0;
     background-color:rgba(0,0,0,0);
 }
+iframe{
+    border:none;
+}
+td:focus, td>*:focus{
+    outline:none;
+}
 a{
     color:inherit;
     text-decoration:none;
+}
+.trans1inout, .trans1inout *{
+    transition:all 0.2s ease-in-out;
 }
 .trans2inout, .trans2inout *{
     transition:all 0.2s ease-in-out;
@@ -29,7 +38,6 @@ a{
     box-shadow: 0 0 10px 0px rgba(0,0,0,0.5);
     z-index: 3;
     overflow:hidden;
-
 }
 .frontsplit{
     padding:0;
@@ -132,7 +140,7 @@ a{
 }
 .accbody, .logbody{
     background-color:rgba(0,0,0,0);
-    padding-top:30px;
+    'padding-top:30px;
 }
 .acctabpad{
     padding-top:20px;
@@ -191,12 +199,14 @@ input:hover,input:focus{
     color:rgba(0,0,0,0.7);
 }
 .logbody select{
-    border-bottom: 2px solid rgba(0,0,0,0.7);
+    border-bottom: 1px solid rgba(0,0,0,0.5);
     background-color:rgba(255, 255, 255, 0.2);
+    color:rgba(0,0,0,0.5);
 }
 .logbody select:hover, .logbody select:focus{
     background-color:rgba(255, 255, 255, 0.4);
-    border-bottom-width:3px;
+    border-bottom:1px solid black;
+    color:black;
     cursor:pointer;
 }
 .logbody .table, .logbody .table th{
@@ -289,20 +299,23 @@ input:hover,input:focus{
 .homepanels:hover #unique{
     border-bottom:2px solid black;
 }
+#unique{
+    width:100%;
+}
 .homepanels:hover .trashcan, .homepanels:hover .editwrench{
     visibility:visible;
 }
-.see{
+.see, .seeedit{
     display:block;
 }
-.nosee{
+.nosee, .noseeedit{
     display:none;
 }
 .glyphicon-arrow-up{
-    color:darkred;
+    color:red;
 }
 .glyphicon-arrow-down{
-    color:darkgreen;
+    color:lime;
 }
 .panel-body .netvalue{
     color:black;
@@ -315,4 +328,57 @@ input:hover,input:focus{
 }
 .newccount:hover, .newccount:focus-within, .newccount:focus{
     filter:opacity(1);
+}
+.popon{
+    position:fixed;
+    display:none;
+    background-color:rgba(0,0,0,0.5);
+    height:100vh;
+    width:100vw;
+    left:0;
+    top:0;
+    z-index: 3;
+}
+iframe[name='popon']{
+    position:relative;
+    width:100%;
+    height:85vh;
+    top:5vh;
+    min-height:50px;
+    z-index:4;
+    border-radius:6px;
+    border:none;
+    margin:auto;
+}
+.logselect_body{
+    margin:0;
+    padding:0;
+    border:none;
+    background-color:darkgray;
+    overflow:hidden;
+}
+.logselect_tabs{
+    position:fixed;
+    width:100vw;
+    top:0;
+    box-shadow:0 0 2px 0 solid black;
+}
+.logselect_tabs a{
+    display:block;
+    padding:10px 0px 10px;
+    float:left;
+    width:25%;
+    text-align: center;
+    text-decoration:none;
+    border-bottom:2px solid white;
+    color:darkgray;
+    background-color:white;
+}
+iframe[name='themainframe']{
+    width:100vw;
+    height:101vh;
+    background-color:rgb(200, 200, 200);
+    margin:0;
+    padding:0;
+    padding-top:45px;
 }

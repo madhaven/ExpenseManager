@@ -3,8 +3,8 @@ require_once 'emfunctions.php';
 $username = session_check('Location: index.php?page=logyearly');
 
 $query = "SELECT `NAME` FROM `accounts` WHERE `USER_ID`=(SELECT `ID` FROM `users` WHERE `USERNAME`='$username')";
-//if (!$con = mysqli_connect("localhost", "root", "", "em"))
-if (!@$con = mysqli_connect("fdb21.awardspace.net", "2759046_em", "Jitin@8943432729", "2759046_em"))
+if (!$con = mysqli_connect("localhost", "root", "", "em"))
+//if (!@$con = mysqli_connect("fdb21.awardspace.net", "2759046_em", "Jitin@8943432729", "2759046_em"))
     die("cannot connect to load Accounts");
 if (!$qres = mysqli_query($con, $query))
     header('Location: accounts.php');
@@ -17,15 +17,12 @@ else
 mysqli_close($con);
 
 //process selected account
-if (isset($_GET['account']))
-    $_SESSION['accname']=$_GET['account'];
-else
-    $_SESSION['accname']=(!isset($_POST['account']))?((isset($_SESSION['accname']))?$_SESSION['accname']:$accountsselect[0]):$_POST['account'];
+$_SESSION['accname']=(!isset($_GET['account']))?((isset($_SESSION['accname']))?$_SESSION['accname']:$accountsselect[0]):$_GET['account'];
 
 //load logs
 $query="SELECT `current_balance`, `transaction_time` FROM `logs` WHERE `accounts_id`=(SELECT `id` from `accounts` WHERE `name`='{$_SESSION['accname']}' and `user_id` = (select `id` from `users` where `username` = '$username')) ORDER BY `logs`.`transaction_time` ASC";
-//if (!$con = mysqli_connect("localhost", "root", "", "em"))
-if (!@$con = mysqli_connect("fdb21.awardspace.net", "2759046_em", "Jitin@8943432729", "2759046_em"))
+if (!$con = mysqli_connect("localhost", "root", "", "em"))
+//if (!@$con = mysqli_connect("fdb21.awardspace.net", "2759046_em", "Jitin@8943432729", "2759046_em"))
     die("Cannot connect to Monthly Logs");
 if (!$qres = mysqli_query($con, $query))
     die ("Error in MLogload Mechanisms : ".mysqli_error($con));
@@ -74,6 +71,7 @@ foreach($LOGS as $x)
         <link type='text/css' rel='stylesheet' href='bootstrap.css'>
         <link type='text/css' rel='stylesheet' href='EM.css'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <link rel='shortcut icon' type='image/png' href='logo.ico'>
         <script>
             function initialset()
             {
@@ -89,12 +87,11 @@ foreach($LOGS as $x)
         </script>
     </head>
     <body class='logbody' onload='initialset()'>
-        <div class='container'>
-            
-            <center><h3>Yearly Logs</h3></center>
+        <div class='container-fluid'>
             <div>
                 <center>
-                    <form  name='accountselect' action='logdaily.php' method='post'>
+<!--
+                    <form  name='accountselect' action='logdaily.php' method='get'>
                         <select class='form-control trans3inout' name='account' onchange="this.form.submit()" title='Checkout another account'>
 <?php
                             foreach ($accountsselect as $x)
@@ -104,6 +101,7 @@ foreach($LOGS as $x)
                                     echo "<option value='$x'>$x</option>";?>
                         </select>
                     </form>
+-->
                     <table class='table table-hover tdaily'>
                         <thead style='display:table-header-group'>
                             <tr>
@@ -121,7 +119,7 @@ foreach($LOGS as $x)
                                 foreach(array_reverse($LOGSMAIN) as $x)
                                 {?>
                             <tr class='trans3inout' title='<?php echo "See more of ".$x[2]; ?>'>
-                                <td><a class='yearly' href='logmonthly.php#<?php echo $x[2]; ?>'><?php echo $x[2]; ?></a></td>
+                                <td><a class='yearly' href='logmonthly.php#<?php echo $x[2]; ?>' onclick='parent.selectme(3)'><?php echo $x[2]; ?></a></td>
                                 <td><?php echo $x[0]-$x[1]; ?></td>
                                 <td><?php echo $x[0]; ?></td>
                                 <td><?php echo $x[1]; ?></td>

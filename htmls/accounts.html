@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Accounts</title>
+        <meta charset='utf-8'>
+        <link type='text/css' rel='stylesheet' href='bootstrap.css'>
+        <meta name='author' content='Jitin J Gigi'>
+        <link type='text/css' rel='stylesheet' href='../bootstrap.css'>
+        <link type='text/css' rel='stylesheet' href='../EM.css'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    </head>
+    <body class='accbody'>
+        <div class='container'>
+            <h3><center>Accounts</center></h3>
+            <div class='container acctabpad'>
+                <center>
+                    <table class='table table-responsive table-inverse table-hover trans2inout acctable'>
+                        <tr>
+                            <td>BLEH</td>
+                            <td class='tdedit'>
+                                <form action="renameaccount.php" method="post">
+                                    <input type='text' maxlength='200' minlength='1' placeholder='Change name' name='newname'>
+                                    <input type='hidden' name='oldname' value='<?php echo $row[0]; ?>'>
+                                    <input type='submit' style='display:none;' value='submit' name='submit'>
+                                </form>
+                            </td>
+                            <td class='tddelete'>
+                                <form action='deleteaccount.php' method='post'>
+                                    <input type='hidden' name='deleteaccount' value='<?php echo $row[0]; ?>'>
+                                    <input type='submit' class='btn btn-danger' value='Delete' name='delete'>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>No Accounts in Database</td>
+                            <td class='tdedit'></td>
+                            <td class='tddelete'></td>
+                        </tr>
+                        <tr class='newaccountrow'>
+                            <td class='tdedit'>Add an account
+                                <form action='newaccount.php' method='post'>
+                                    : <input type='text' name='newaccount' class=''>
+                                    <input type='submit' value='Go' style='display:none'>
+                                </form>
+                            </td>
+                            <td class='tdedit'></td>
+                            <td class='tddelete'></td>
+                        </tr>
+                    </table>
+                </center>
+            </div>    
+        </div>
+    </body>
+</html>

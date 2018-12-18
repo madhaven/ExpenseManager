@@ -12,6 +12,7 @@ else $page = "home.php";
         <link type='text/css' rel='stylesheet' href='bootstrap.css'>
         <meta name='author' content='Jitin J Gigi'>
         <link rel='stylesheet' type='text/css' href='EM.css'>
+        <link rel='shortcut icon' type='image/png' href='logo.ico'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <script>
             function frameblur()
@@ -34,15 +35,15 @@ else $page = "home.php";
             }
         </script>
     </head>
-    <body style='background-color:darkgray'>
+    <body style='background-color:darkgray; overflow:hidden'>
         <div class='fronttitle'>
-            <h2 class=''>Expense Manager : <?php if(isset($_SESSION['username'])) echo $_SESSION['username'];?></h2>
+            <h3 class='fronttitleh2'>Expense Manager : <?php if(isset($_SESSION['username'])) echo $_SESSION['username'];?></h3>
         </div>
         <nav class='homenavbar col-xs-4 col-sm-2 col-lg-1 trans3inout' onmouseover='navfocus()' onmouseout='navblur()'>
             <ul>
                 <li><a href='home.php' target='mainframe'>Home</a></li>
                 <!--li><a href='accounts.php' target='mainframe'>Accounts</a></li-->
-                <li class='logsli'>
+                <!--li class='logsli'>
                     <a href='logyearly.php' target='mainframe'>Logs</a>
                     <ul>
                         <li><a href='logyearly.php' target='mainframe'>Yearly</a></li>
@@ -50,7 +51,7 @@ else $page = "home.php";
                         <li><a href='logdaily.php' target='mainframe'>Daily</a></li>
                         <li><a href='logall.php' target='mainframe'>All</a></li>
                     </ul>
-                </li>
+                </li-->
                 <li><a href='password.php' target='mainframe'>Password</a></li>
                 <li><a href='signout.php'>Signout</a></li>
             </ul>
